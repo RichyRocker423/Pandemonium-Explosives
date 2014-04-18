@@ -5,13 +5,13 @@ AddCSLuaFile()
 SWEP.HoldType			= "slam"
 
 if CLIENT then
-   SWEP.PrintName			= "C4"
+   SWEP.PrintName			= "Pandemonium Explosive"
    SWEP.Slot				= 6
 
    SWEP.EquipMenuData = {
-      type  = "item_weapon",
-      name  = "C4",
-      desc  = "c4_desc"
+      type  = "Last Resort Huge Bomb ~ By Richy & Leaf",
+      name  = "Pandemonium Explosive",
+      desc  = "Use as a last resort, \npeople have a minute to disarm it or\nBOOOOOOOOM!!!!!!"
    };
 
    SWEP.Icon = "VGUI/ttt/icon_c4"
@@ -72,7 +72,7 @@ function SWEP:BombDrop()
       
       local vthrow = vvel + vang * 200
 
-      local bomb = ents.Create("ttt_c4")
+      local bomb = ents.Create("ttt_PE")
       if IsValid(bomb) then
          bomb:SetPos(vsrc + vang * 10)
          bomb:SetOwner(ply)
@@ -119,7 +119,7 @@ function SWEP:BombStick()
       local tr = util.TraceLine({start=spos, endpos=epos, filter=ignore, mask=MASK_SOLID})
 
       if tr.HitWorld then
-         local bomb = ents.Create("ttt_c4")
+         local bomb = ents.Create("ttt_PE")
          if IsValid(bomb) then
             bomb:PointAtEntity(ply)
 
